@@ -1,16 +1,9 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
 
 import { baseUrl } from "../lib/consts"
-import { Issues } from "../lib/types"
 
-export const githubIssuesApi = createApi({
+export const api = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({ baseUrl }),
-  endpoints: (builder) => ({
-    getIssuesByRepo: builder.query<Issues, string>({
-      query: (name) => `${name}/issues`,
-    }),
-  }),
+  endpoints: () => ({}),
 })
-
-export const { useGetIssuesByRepoQuery } = githubIssuesApi
