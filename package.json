@@ -11,9 +11,12 @@
     "format": "prettier --write . --config ./.prettierrc.json"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.0.1",
     "@reduxjs/toolkit": "^1.9.5",
     "@trivago/prettier-plugin-sort-imports": "^4.1.1",
+    "antd": "^5.4.6",
     "classnames": "^2.3.2",
+    "compose-function": "^3.0.3",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-react": "^7.32.2",
@@ -21,9 +24,13 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
+    "react-toastify": "^9.1.2",
+    "react-use-localstorage": "^3.5.3",
+    "redux-persist": "^6.0.0",
     "sass": "^1.62.1"
   },
   "devDependencies": {
+    "@types/compose-function": "^0.0.30",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@typescript-eslint/eslint-plugin": "^5.59.1",
