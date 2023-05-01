@@ -1,0 +1,26 @@
+$main-max-width: 1000px;
+
+.main {
+  display: grid;
+  grid-template-areas:
+    "search-bar"
+    "details   "
+    "board     ";
+
+  max-width: $main-max-width;
+  row-gap: 1.75em;
+
+  margin-inline: auto;
+}
+
+.search-bar {
+  grid-area: search-bar;
+}
+
+.details {
+  grid-area: details;
+}
+
+.board {
+  grid-area: board;
+}
