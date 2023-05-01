@@ -2,7 +2,7 @@ import type { PayloadAction } from "@reduxjs/toolkit"
 import { createSlice } from "@reduxjs/toolkit"
 
 import { RootState } from "../../../../shared/store"
-import { distributeIssues, swapIssuesIndicesProps } from "../../lib"
+import { distributeIssues, sortIssuesByCreatedAt, swapIssuesIndicesProps } from "../../lib"
 import { DistributedIssues, TIssue, TIssues } from "../../lib/types"
 
 export type IssuesState = {
@@ -97,11 +97,9 @@ export const issuesSlice = createSlice({
 
       const issuesByStatus = state.issues.filter((issue) => issue.status === status)
 
-      issuesByStatus.sort(
-        (i1, i2) => (new Date(i2.created_at) as any) - (new Date(i1.created_at) as any)
-      )
+      const sortedIssues = sortIssuesByCreatedAt(issuesByStatus)
 
-      issuesByStatus.forEach((sortedIssue, index) => {
+      sortedIssues.forEach((sortedIssue, index) => {
         const issue = state.issues.find(({ number }) => number === sortedIssue.number) as TIssue
         issue.index = index
       })

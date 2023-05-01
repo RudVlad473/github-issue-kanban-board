@@ -1,9 +1,14 @@
 import { createListenerMiddleware } from "@reduxjs/toolkit"
 
-import { setIssues, swapIssues, updateStatus } from ".."
+import { setIssues, sortIssuesByDate, swapIssues, updateStatus } from ".."
 import { RootState } from "../../../../shared/store"
-import { getSerializedIssues, setLocalStorageIssues, swapIssuesIndicesProps } from "../../lib"
-import { TIssues } from "../../lib/types"
+import {
+  getSerializedIssues,
+  setLocalStorageIssues,
+  sortIssuesByCreatedAt,
+  swapIssuesIndicesProps,
+} from "../../lib"
+import { TIssue, TIssues } from "../../lib/types"
 
 // Create the middleware instance and methods
 const localStorageMiddleware = createListenerMiddleware()
@@ -68,6 +73,33 @@ localStorageMiddleware.startListening({
     })
 
     setLocalStorageIssues(path, getSerializedIssues(updatedIssues))
+  },
+})
+
+localStorageMiddleware.startListening({
+  actionCreator: sortIssuesByDate,
+  effect: async (action, listenerApi) => {
+    // Can cancel other running instances
+    listenerApi.cancelActiveListeners()
+
+    const { status } = action.payload
+
+    const {
+      issues: { issues, path },
+    } = listenerApi.getState() as RootState
+
+    const copiedIssues = structuredClone(issues)
+
+    const issuesByStatus = issues.filter((issue) => issue.status === status)
+
+    const sortedIssues = sortIssuesByCreatedAt(issuesByStatus)
+
+    sortedIssues.forEach((sortedIssue, index) => {
+      const issue = copiedIssues.find(({ number }) => number === sortedIssue.number) as TIssue
+      issue.index = index
+    })
+
+    setLocalStorageIssues(path, getSerializedIssues(copiedIssues))
   },
 })
 
