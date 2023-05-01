@@ -1,0 +1,15 @@
+@use "../fonts/" as *;
+
+$basic-p: 1em;
+
+
+html {
+  font-family: $font-family, "Calibri";
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: $basic-p;
+
+  font-weight: $normal;
+}
