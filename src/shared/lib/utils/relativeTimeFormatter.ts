@@ -4,8 +4,8 @@ const relativeTimeFormatter = new Intl.RelativeTimeFormat("en", {
 })
 
 export function getRelativeTime(isoStringDate: string): string {
-  const date = new Date(isoStringDate)
-  const now = new Date()
+  const date = new Date(isoStringDate) as any
+  const now = new Date() as any
   const diffInSeconds = Math.floor((now - date) / 1000)
 
   if (diffInSeconds < 60) {

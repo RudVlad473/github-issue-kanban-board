@@ -1,13 +1,5 @@
 import { useCallback } from "react"
 
-export function getLocalStorageValue<T>(key: string): T | undefined {
-  const localStorageValue = localStorage.getItem(key) || "null"
-  if (localStorageValue === "undefined") {
-    return undefined
-  }
-  return JSON.parse(localStorageValue) || undefined
-}
-
 export function useLocalStorage<T>(key: string) {
   const setLocalStorageValue = useCallback(
     (value: T) => {
