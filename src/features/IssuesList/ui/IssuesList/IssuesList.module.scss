@@ -1,3 +1,5 @@
+@use "../../../../shared/stylesheets/utils/" as u;
+
 $list-p: 1em;
 $bg-color: #8c92ac;
 
@@ -15,10 +17,10 @@ $bg-color: #8c92ac;
 }
 
 .issue {
-  transition: all 0.1s ease-out;
+  transition: u.$defaultAnimation;
 
   &--hovered-over {
-    scale: 1.1;
+    scale: u.$onHoverScale;
     opacity: 0.75;
   }
 }
