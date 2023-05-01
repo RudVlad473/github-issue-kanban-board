@@ -86,10 +86,30 @@ export const issuesSlice = createSlice({
       issue.status = newStatus
       issue.index = newIssueIndex
     },
+
+    sortIssuesByDate: (
+      state,
+      action: PayloadAction<{
+        status: TIssue["status"]
+      }>
+    ) => {
+      const { status } = action.payload
+
+      const issuesByStatus = state.issues.filter((issue) => issue.status === status)
+
+      issuesByStatus.sort(
+        (i1, i2) => (new Date(i2.created_at) as any) - (new Date(i1.created_at) as any)
+      )
+
+      issuesByStatus.forEach((sortedIssue, index) => {
+        const issue = state.issues.find(({ number }) => number === sortedIssue.number) as TIssue
+        issue.index = index
+      })
+    },
   },
 })
 
-export const { setIssues, swapIssues, updateStatus } = issuesSlice.actions
+export const { setIssues, swapIssues, updateStatus, sortIssuesByDate } = issuesSlice.actions
 
 // Other code such as selectors can use the imported `RootState` type
 export const selectIssues = ({ issues }: RootState) => issues.issues

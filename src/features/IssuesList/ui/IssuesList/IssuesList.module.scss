@@ -19,6 +19,10 @@ $bg-color: #8c92ac;
 .issue {
   transition: u.$defaultAnimation;
 
+  &:active {
+    opacity: 1 !important;
+  }
+
   &--hovered-over {
     scale: u.$onHoverScale;
     opacity: 0.75;

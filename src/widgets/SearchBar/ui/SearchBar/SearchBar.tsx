@@ -40,11 +40,11 @@ export const SearchBar: FC = () => {
         placeholder="Enter repo URL"
         enterButton="Load issues"
         size="middle"
-        allowClear={true}
         defaultValue="https://github.com/facebook/react"
-        bordered={true}
+        bordered
         loading={false}
         onSearch={onSearch}
+        
         list="search-suggestions"
       />
       <datalist id="search-suggestions">
