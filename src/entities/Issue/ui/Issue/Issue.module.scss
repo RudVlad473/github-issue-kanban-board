@@ -1,0 +1,41 @@
+@use "../../../../shared/stylesheets/fonts/" as *;
+@use "../../../../shared/stylesheets/utils/" as u;
+
+.issue {
+  display: grid;
+  grid-template-areas:
+    "header "
+    "details"
+    "footer ";
+  gap: 0.5em;
+
+  border: 1px solid black;
+  border-radius: 1em;
+  padding: 0.5em;
+
+  background-color: white;
+}
+
+.header,
+.details,
+.footer {
+  @extend u, .ellipsis !optional;
+}
+
+.header {
+  grid-area: header;
+
+  font-weight: $bold;
+}
+
+.details {
+  grid-area: details;
+}
+
+.footer {
+  grid-area: footer;
+
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.5em;
+}
