@@ -26,16 +26,24 @@ export const Details: FC = () => {
     return <></>
   }
 
-  const { full_name, stargazers_count, html_url } = details
+  const { full_name, stargazers_count, html_url, owner } = details
 
-  const link = pathToName(full_name)
+  const [repoPublisherName, separator, repoName] = pathToName(full_name)
   const stars = numberFormatter.format(stargazers_count) + " stars"
 
   return (
     <header className={styles.details}>
-      <a href={html_url} target="_blank" rel="noreferrer">
-        <span className={styles.name}>{link}</span>
-      </a>
+      <span>
+        <a href={owner.html_url} target="_blank" rel="noopener noreferrer">
+          <span className={styles.name}>{repoPublisherName}</span>
+        </a>
+        <a href={repoName} target="_blank" rel="noopener noreferrer">
+          <span className={styles.name}>{separator}</span>
+        </a>
+        <a href={html_url} target="_blank" rel="noopener noreferrer">
+          <span className={styles.name}>{repoName}</span>
+        </a>
+      </span>
       <span className={styles.stars}>
         <StarOutlined />
         {stars}
