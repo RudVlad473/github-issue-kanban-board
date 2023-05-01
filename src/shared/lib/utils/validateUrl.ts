@@ -1,8 +1,10 @@
+const githubRepoUrlRegex = /^(?:https?:\/\/)?(?:www\.)?github\.com\/([\w-]+)\/([\w-]+)(?:\/)?$/
+
 export function validateUrl(url: string): boolean {
   let isValidUrl = false
 
   try {
-    if (!url) {
+    if (!url || !githubRepoUrlRegex.test(url)) {
       throw new Error()
     }
 

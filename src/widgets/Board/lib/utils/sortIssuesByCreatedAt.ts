@@ -1,4 +1,4 @@
-import { TIssue, TIssues } from "../types"
+import { TIssues } from "../types"
 
 export function sortIssuesByCreatedAt(issues: TIssues) {
   return issues
