@@ -26,7 +26,10 @@ export const Board: FC = () => {
           {distributedIssues.map(({ issues, status }) => (
             <li key={status} className={styles.bucket}>
               <h1 className={styles.header} title={status}>{`${status} (${issues.length})`}</h1>
-              <div className={styles.content} {...dropAreaProps} onDrop={(e) => onDrop(e, status)}>
+              <div
+                className={styles.content}
+                {...dropAreaProps}
+                onDrop={(e) => onDrop(e, status)}>
                 <IssuesList issues={issues} />
               </div>
             </li>

@@ -33,6 +33,18 @@ export const issuesSlice = createSlice({
     ) => {
       const { firstIssueNumber, secondIssueNumber } = action.payload
 
+      const firstIssue = state.issues.find(({ number }) => number === firstIssueNumber)
+      const secondIssue = state.issues.find(({ number }) => number === secondIssueNumber)
+
+      if (!firstIssue || !secondIssue) {
+        throw new Error("One of the issues was not found")
+      }
+
+      //can only swap issues within the same status bucket
+      if (firstIssue.status !== secondIssue.status) {
+        return
+      }
+
       const updatedIssues = swapIssuesIndicesProps(
         state.issues,
         firstIssueNumber,
@@ -40,6 +52,8 @@ export const issuesSlice = createSlice({
       )
 
       state.issues = updatedIssues
+
+      // firstIssue.status = secondIssue.status
     },
 
     updateStatus: (
@@ -57,7 +71,20 @@ export const issuesSlice = createSlice({
         throw new Error("Such issue does not exist")
       }
 
+      if (issue.status === newStatus) {
+        return
+      }
+
+      const newIssueIndex = state.issues.reduce((statusIssuesCount, { status }) => {
+        if (status === newStatus) {
+          return statusIssuesCount + 1
+        }
+
+        return statusIssuesCount
+      }, 0)
+
       issue.status = newStatus
+      issue.index = newIssueIndex
     },
   },
 })
