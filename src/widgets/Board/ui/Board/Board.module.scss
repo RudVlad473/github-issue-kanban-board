@@ -1,0 +1,39 @@
+@use "../../../../shared/stylesheets/fonts/" as f;
+@use "../../../../shared/stylesheets/utils/" as u;
+
+$board-gap: 1em;
+$min-column-width: 200px;
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, minmax($min-column-width, 1fr));
+  gap: $board-gap;
+}
+
+.bucket {
+  display: flex;
+  flex-direction: column;
+  gap: $board-gap;
+}
+
+.header {
+  text-align: center;
+
+  font-weight: f.$bold;
+}
+
+.content {
+  display: flex;
+  flex: 1;
+
+  transition: u.$defaultAnimation;
+
+  & > * {
+    display: flex;
+    flex: 1;
+  }
+
+  &--highlight {
+    opacity: 0.8;
+  }
+}
