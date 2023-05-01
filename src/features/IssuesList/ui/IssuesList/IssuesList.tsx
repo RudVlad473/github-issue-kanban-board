@@ -20,7 +20,8 @@ export const IssuesList: FC<IssuesListProps> = ({ issues }) => {
           className={styles.issue}
           {...dragOptions}
           onDragStart={(e) => onDragStart(e, issue)}
-          onDrop={(e) => onDrop(e, issue)}>
+          onDrop={(e) => onDrop(e, issue)}
+        >
           <Issue {...issue} />
         </li>
       ))}

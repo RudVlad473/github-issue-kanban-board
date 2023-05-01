@@ -1,8 +1,7 @@
 import { useEffect } from "react"
-import { useDispatch } from "react-redux"
 
 import { synchronizeIssuesThunk } from "."
-import { selectDistributedIssues, setIssues } from ".."
+import { selectDistributedIssues } from ".."
 import { getIssueStatus } from "../../../../entities/Issue/lib"
 import { useGetIssuesQuery } from "../../../../shared/api"
 import { ApiIssues, isObjectEmpty, useAppDispatch, useAppSelector } from "../../../../shared/lib"

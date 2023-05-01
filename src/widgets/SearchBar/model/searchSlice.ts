@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit"
 import type { PayloadAction } from "@reduxjs/toolkit"
 
-import { TRepoInfo } from "../../../lib"
+import { TRepoInfo } from "../../../shared/lib"
 import { RootState } from "../../../shared/store"
 
 const initialState = {

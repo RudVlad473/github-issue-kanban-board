@@ -8,7 +8,4 @@ export type SerializedIssue = {
 
 export type SerializedIssues = SerializedIssue[]
 
-export type SerializedIssuesMap = Map<
-  SerializedIssue["issueNumber"],
-  SerializedIssue
->
+export type SerializedIssuesMap = Map<SerializedIssue["issueNumber"], SerializedIssue>

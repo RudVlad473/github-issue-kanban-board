@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useState } from "react"
+import { useCallback } from "react"
 
-function getLocalStorageValue<T>(key: string): T | undefined {
+export function getLocalStorageValue<T>(key: string): T | undefined {
   const localStorageValue = localStorage.getItem(key) || "null"
   if (localStorageValue === "undefined") {
     return undefined
