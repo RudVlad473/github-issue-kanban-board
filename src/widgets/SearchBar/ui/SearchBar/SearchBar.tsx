@@ -39,12 +39,12 @@ export const SearchBar: FC = () => {
       <Search
         placeholder="Enter repo URL"
         enterButton="Load issues"
-        size="middle"
+        size="large"
         defaultValue="https://github.com/facebook/react"
         bordered
         loading={false}
         onSearch={onSearch}
-        
+        role="textbox"
         list="search-suggestions"
       />
       <datalist id="search-suggestions">
