@@ -14,14 +14,14 @@ export const IssuesList: FC<IssuesListProps> = ({ issues }) => {
 
   return (
     <ul className={styles["issues-list"]}>
-      {issues.map((issue) => (
+      {issues.map((issue, index) => (
         <li
+          data-testid={`issue-${index}`}
           key={issue.number}
           className={styles.issue}
           {...dragOptions}
           onDragStart={(e) => onDragStart(e, issue)}
-          onDrop={(e) => onDrop(e, issue)}
-        >
+          onDrop={(e) => onDrop(e, issue)}>
           <Issue {...issue} />
         </li>
       ))}

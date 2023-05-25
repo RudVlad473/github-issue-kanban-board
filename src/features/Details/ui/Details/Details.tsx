@@ -32,7 +32,7 @@ export const Details: FC = () => {
   const stars = numberFormatter.format(stargazers_count) + " stars"
 
   return (
-    <header className={styles.details}>
+    <header className={styles.details} data-testid='details'>
       <span>
         <a href={owner.html_url} target="_blank" rel="noopener noreferrer">
           <span className={styles.name}>{repoPublisherName}</span>
@@ -44,7 +44,7 @@ export const Details: FC = () => {
           <span className={styles.name}>{repoName}</span>
         </a>
       </span>
-      <span className={styles.stars}>
+      <span className={styles.stars} data-testid='stars'>
         <StarOutlined />
         {stars}
       </span>
