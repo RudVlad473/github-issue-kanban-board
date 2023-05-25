@@ -16,3 +16,7 @@
 
 ## Query tool
 - **RTK Query**
+
+## Testing
+- **React Testing Library**
+- **Vitest**
