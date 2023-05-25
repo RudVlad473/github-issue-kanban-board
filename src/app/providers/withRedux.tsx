@@ -1,6 +1,8 @@
 import { Provider } from "react-redux"
 
-import { store } from "../../shared/store/store"
+import { setupStore } from "../../shared/store"
+
+const store = setupStore()
 
 export const withRedux = (component: () => React.ReactNode) => () =>
   <Provider store={store}>{component()}</Provider>
