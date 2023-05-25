@@ -44,7 +44,7 @@ describe("Details", () => {
 
     await renderedApp.findAllByTestId(/^issue-/)
 
-    const stars = await renderedApp.queryByRole("stars")
+    const stars = renderedApp.queryByTestId(/stars/)
 
     //EXPECT
     expect(stars).not.toBeNull()
