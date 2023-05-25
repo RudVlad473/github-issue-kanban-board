@@ -2,13 +2,13 @@ import { createListenerMiddleware } from "@reduxjs/toolkit"
 
 import { setIssues, sortIssuesByDate, swapIssues, updateStatus } from ".."
 import { RootState } from "../../../../shared/store"
+import { TIssue, TIssues } from "../../lib/types"
 import {
   getSerializedIssues,
   setLocalStorageIssues,
   sortIssuesByCreatedAt,
   swapIssuesIndicesProps,
-} from "../../lib"
-import { TIssue, TIssues } from "../../lib/types"
+} from "../../lib/utils"
 
 // Create the middleware instance and methods
 const localStorageMiddleware = createListenerMiddleware()

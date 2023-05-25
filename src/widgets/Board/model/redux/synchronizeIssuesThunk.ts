@@ -2,7 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit"
 
 import { IssuesState, setIssues } from ".."
 import { SerializedIssues, isKeyInLocalStorage, isObjectEmpty } from "../../../../shared/lib"
-import { getLocalStorageIssues, serializedIssuesToIssues } from "../../lib"
+import { getLocalStorageIssues, serializedIssuesToIssues } from "../../lib/utils"
 
 export const synchronizeIssuesThunk = createAsyncThunk(
   "issues/synchronizeIssues",

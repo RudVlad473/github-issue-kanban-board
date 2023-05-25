@@ -2,8 +2,8 @@ import type { PayloadAction } from "@reduxjs/toolkit"
 import { createSlice } from "@reduxjs/toolkit"
 
 import { RootState } from "../../../../shared/store"
-import { distributeIssues, sortIssuesByCreatedAt, swapIssuesIndicesProps } from "../../lib"
 import { DistributedIssues, TIssue, TIssues } from "../../lib/types"
+import { distributeIssues, sortIssuesByCreatedAt, swapIssuesIndicesProps } from "../../lib/utils"
 
 export type IssuesState = {
   path: string

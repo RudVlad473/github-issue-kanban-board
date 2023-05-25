@@ -14,7 +14,7 @@ export function useIssues() {
 
   const { data, isLoading, isFetching } = useGetIssuesQuery(
     { name, repo },
-    { refetchOnMountOrArgChange: true }
+    { refetchOnMountOrArgChange: true, skip: !name || !repo }
   )
 
   const dispatch = useAppDispatch()
