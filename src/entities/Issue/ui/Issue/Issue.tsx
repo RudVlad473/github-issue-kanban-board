@@ -1,7 +1,8 @@
 import { FC } from "react"
 
-import { ApiIssue, getRelativeTime } from "../../../../shared/lib"
 import styles from "./Issue.module.scss"
+import { ApiIssue } from "../../../../shared/lib/types"
+import { getRelativeTime } from "../../../../shared/lib/utils"
 
 export const Issue: FC<ApiIssue> = ({ title, user, comments, number, created_at }) => {
   const openedAt = "opened " + getRelativeTime(created_at)

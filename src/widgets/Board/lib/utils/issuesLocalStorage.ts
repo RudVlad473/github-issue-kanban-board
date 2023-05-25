@@ -1,9 +1,9 @@
+import { SerializedIssues } from "../../../../shared/lib/types"
 import {
-  SerializedIssues,
   getLocalStorageValue,
   isObjectEmpty,
   setLocalStorageValue,
-} from "../../../../shared/lib"
+} from "../../../../shared/lib/utils"
 
 export function setLocalStorageIssues(key: string, issues: SerializedIssues) {
   if (!isObjectEmpty(issues) && key) {

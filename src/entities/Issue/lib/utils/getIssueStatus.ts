@@ -1,4 +1,5 @@
-import { ApiIssue, Status, isObjectEmpty } from "../../../../shared/lib"
+import { ApiIssue, Status } from "../../../../shared/lib/types"
+import { isObjectEmpty } from "../../../../shared/lib/utils"
 
 export function getIssueStatus({ assignees, closed_at }: ApiIssue): Status {
   if (!isObjectEmpty(assignees)) {

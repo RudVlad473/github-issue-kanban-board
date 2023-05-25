@@ -2,8 +2,8 @@ import { FC } from "react"
 
 import { useDraggableIssue } from "../.."
 import { Issue } from "../../../../entities/Issue/ui/Issue"
-import { ApiIssues } from "../../../../shared/lib"
 import styles from "./IssuesList.module.scss"
+import { ApiIssues } from "../../../../shared/lib/types"
 
 export type IssuesListProps = {
   issues: ApiIssues

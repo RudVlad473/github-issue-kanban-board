@@ -1,10 +1,10 @@
 import { DragEvent, useCallback } from "react"
 import { useDispatch } from "react-redux"
 
-import { ApiIssue } from "../../../shared/lib"
 import { swapIssues } from "../../../widgets/Board"
 import { dataTransferIssueKey } from "../../../widgets/Board/consts"
 import { highlightEventTarget, removeHighlight } from "../lib"
+import { ApiIssue } from "../../../shared/lib/types"
 
 export function useDraggableIssue() {
   const dispatch = useDispatch()

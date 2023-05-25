@@ -1,4 +1,4 @@
-import { SerializedIssues } from "../../../../shared/lib"
+import { SerializedIssues } from "../../../../shared/lib/types"
 import { TIssues } from "../types"
 
 export function serializedIssuesToIssues(

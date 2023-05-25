@@ -1,4 +1,4 @@
-import { ApiIssue, Status } from "../../../../shared/lib"
+import { ApiIssue, Status } from "../../../../shared/lib/types"
 
 export type TIssue = ApiIssue & {
   index: number

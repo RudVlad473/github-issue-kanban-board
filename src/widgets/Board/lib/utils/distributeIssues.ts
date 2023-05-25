@@ -1,4 +1,4 @@
-import { statuses } from "../../../../shared/lib"
+import { statuses } from "../../../../shared/lib/types"
 import { DistributedIssues, TIssues } from "../types"
 
 export function distributeIssues(issues: TIssues): DistributedIssues {

@@ -3,7 +3,8 @@ import { FC, useCallback } from "react"
 import { ToastContainer } from "react-toastify"
 
 import { setUrl } from "../.."
-import { useAppDispatch, useToast, validateUrl } from "../../../../shared/lib"
+import { useAppDispatch, useToast } from "../../../../shared/lib/hooks"
+import { validateUrl } from "../../../../shared/lib/utils"
 
 const { Search } = Input
 

@@ -2,7 +2,7 @@ import user from "@testing-library/user-event"
 import { describe, it } from "vitest"
 
 import App from "../../../../app/App"
-import { renderWithProviders } from "../../../../shared/lib"
+import { renderWithProviders } from "../../../../shared/lib/utils"
 
 describe("Details", () => {
   let renderedApp: ReturnType<typeof renderWithProviders>

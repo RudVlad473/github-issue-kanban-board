@@ -2,9 +2,9 @@ import { DragEvent, useCallback } from "react"
 import { useDispatch } from "react-redux"
 
 import { updateStatus } from "."
-import { Status } from "../../../shared/lib"
 import { dataTransferIssueKey } from "../consts"
 import styles from "../ui/Board/Board.module.scss"
+import { Status } from "../../../shared/lib/types"
 
 function highlightArea(e: DragEvent<HTMLDivElement>) {
   e.currentTarget.classList.add(styles["content--highlight"])

@@ -4,7 +4,9 @@ import { synchronizeIssuesThunk } from "."
 import { selectDistributedIssues } from ".."
 import { getIssueStatus } from "../../../../entities/Issue/lib"
 import { useGetIssuesQuery } from "../../../../shared/api"
-import { ApiIssues, isObjectEmpty, useAppDispatch, useAppSelector } from "../../../../shared/lib"
+import { useAppDispatch, useAppSelector } from "../../../../shared/lib/hooks"
+import { ApiIssues } from "../../../../shared/lib/types"
+import { isObjectEmpty } from "../../../../shared/lib/utils"
 import { selectRepoInfo } from "../../../SearchBar"
 
 export function useIssues() {

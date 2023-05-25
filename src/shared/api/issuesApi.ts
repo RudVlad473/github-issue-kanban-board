@@ -1,6 +1,6 @@
 import { api } from "."
-import { ApiIssues, TRepoInfo } from "../lib"
 import { getIssuesPath } from "../lib/paths"
+import { ApiIssues, TRepoInfo } from "../lib/types"
 
 export const issuesApi = api.injectEndpoints({
   endpoints: ({ query }) => ({

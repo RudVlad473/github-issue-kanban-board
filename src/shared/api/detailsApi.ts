@@ -1,6 +1,6 @@
 import { api } from "."
-import { TDetails, TRepoInfo } from "../lib"
 import { getDetailsPath } from "../lib/paths"
+import { TDetails, TRepoInfo } from "../lib/types"
 
 export const detailsApi = api.injectEndpoints({
   endpoints: ({ query }) => ({
