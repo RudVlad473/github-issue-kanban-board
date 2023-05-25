@@ -2,7 +2,7 @@ import user from "@testing-library/user-event"
 import { describe, it } from "vitest"
 
 import App from "../../../../app/App"
-import { Status, renderWithProviders } from "../../../../shared/lib"
+import { renderWithProviders } from "../../../../shared/lib"
 
 describe("Details", () => {
   let renderedApp: ReturnType<typeof renderWithProviders>
@@ -29,7 +29,7 @@ describe("Details", () => {
     user.type(searchInput, "https://github.com/facebook/react")
     user.click(searchBtn)
 
-    const issues = await renderedApp.findAllByTestId(/^issue-/)
+    await renderedApp.findAllByTestId(/^issue-/)
 
     const links = await renderedApp.findAllByRole("link")
 
@@ -42,7 +42,7 @@ describe("Details", () => {
     user.type(searchInput, "https://github.com/facebook/react")
     user.click(searchBtn)
 
-    const issues = await renderedApp.findAllByTestId(/^issue-/)
+    await renderedApp.findAllByTestId(/^issue-/)
 
     const stars = await renderedApp.queryByRole("stars")
 
