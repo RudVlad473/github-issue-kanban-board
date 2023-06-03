@@ -1,7 +1,7 @@
 # Technologies
 
-**React** + **hooks**
-**Typescript**
+- **React** + **hooks**
+- **Typescript**
 
 ## UI 
 
