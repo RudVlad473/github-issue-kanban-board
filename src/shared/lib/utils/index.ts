@@ -1,5 +1,4 @@
 export * from "./isObjectEmpty"
-export * from "./localStorage"
 export * from "./numberFormatter"
 export * from "./pathToName"
 export * from "./relativeTimeFormatter"
